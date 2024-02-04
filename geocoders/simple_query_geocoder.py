@@ -1,6 +1,7 @@
 from geocoders.geocoder import Geocoder
 
 
+# Алгоритм "в лоб"
 class SimpleQueryGeocoder(Geocoder):
     def _apply_geocoding(self, area_id: str) -> str:
         """
@@ -8,4 +9,4 @@ class SimpleQueryGeocoder(Geocoder):
             - Делать запросы к API для каждой area
             - Для каждого ответа формировать полный адрес
         """
-        return ""
+        raise NotImplementedError()

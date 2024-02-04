@@ -10,6 +10,7 @@ class InvertedNode:
     parent_id: str | None
 
 
+# Инверсия дерева
 class InvertedTreeGeocoder(Geocoder):
     def __init__(self, samples: int | None = None, data: list[TreeNode] | None = None):
         super().__init__(samples=samples)
@@ -31,4 +32,4 @@ class InvertedTreeGeocoder(Geocoder):
             TODO:
             - Возвращать данные из словаря с путями
         """
-        return ""
+        raise NotImplementedError()

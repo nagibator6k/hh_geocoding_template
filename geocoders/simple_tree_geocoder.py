@@ -2,6 +2,7 @@ from api import API, TreeNode
 from geocoders.geocoder import Geocoder
 
 
+# Перебор дерева
 class SimpleTreeGeocoder(Geocoder):
     def __init__(self, samples: int | None = None, data: list[TreeNode] | None = None):
         super().__init__(samples=samples)
@@ -17,4 +18,4 @@ class SimpleTreeGeocoder(Geocoder):
             - В ходе перебора возвращать массив элементов, состоящих из TreeNode необходимой ветки
             - Из массива TreeNode составить полный адрес
         """
-        return ""
+        raise NotImplementedError()
