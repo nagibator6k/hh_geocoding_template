@@ -2,7 +2,7 @@ import time
 
 from api import API
 from geocoders.geocoder import Geocoder
-from geocoders.inverted_tree_geocoder import InvertedTreeGeocoder
+from geocoders.memorized_tree_geocoder import MemorizedTreeGeocoder
 from geocoders.simple_query_geocoder import SimpleQueryGeocoder
 from geocoders.simple_tree_geocoder import SimpleTreeGeocoder
 
@@ -25,13 +25,13 @@ def main():
     geocoder_list: list[Geocoder] = [
         SimpleQueryGeocoder(samples=10),
         SimpleTreeGeocoder(samples=10, data=areas_data),
-        InvertedTreeGeocoder(samples=10, data=areas_data),
+        MemorizedTreeGeocoder(samples=10, data=areas_data),
         SimpleTreeGeocoder(samples=1000, data=areas_data),
-        InvertedTreeGeocoder(samples=1000, data=areas_data),
+        MemorizedTreeGeocoder(samples=1000, data=areas_data),
         SimpleTreeGeocoder(samples=10000, data=areas_data),
         # SimpleTreeGeocoder(data=areas_data),
-        InvertedTreeGeocoder(samples=10000, data=areas_data),
-        InvertedTreeGeocoder(data=areas_data),
+        MemorizedTreeGeocoder(samples=10000, data=areas_data),
+        MemorizedTreeGeocoder(data=areas_data),
     ]
 
     for geocoder in geocoder_list:
